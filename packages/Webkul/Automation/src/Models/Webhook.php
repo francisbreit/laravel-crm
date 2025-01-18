@@ -8,9 +8,12 @@ use Webkul\Automation\Contracts\Webhook as ContractsWebhook;
 
 class Webhook extends Model implements ContractsWebhook
 {
-      protected $casts = [
-        'conditions' => 'array',
-        'actions'    => 'array',
+    protected $casts = [
+        'conditions'   => 'array',
+        'actions'      => 'array',
+        'query_params' => 'array',
+        'headers'      => 'array',
+        'payload'      => 'array',
     ];
 
     /**
@@ -29,16 +32,5 @@ class Webhook extends Model implements ContractsWebhook
         'payload_type',
         'raw_payload_type',
         'payload',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'query_params' => 'array',
-        'headers'      => 'array',
-        'payload'      => 'array',
     ];
 }
