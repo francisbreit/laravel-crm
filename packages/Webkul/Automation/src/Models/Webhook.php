@@ -8,7 +8,10 @@ use Webkul\Automation\Contracts\Webhook as ContractsWebhook;
 
 class Webhook extends Model implements ContractsWebhook
 {
-    use HasFactory;
+      protected $casts = [
+        'conditions' => 'array',
+        'actions'    => 'array',
+    ];
 
     /**
      * The attributes that are mass assignable.
